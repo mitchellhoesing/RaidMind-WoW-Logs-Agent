@@ -38,11 +38,14 @@ packages = ["src/wowlogs_agent"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-src = ["src", "tests"]
+src = ["src"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
 ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["wowlogs_agent"]
 
 [tool.ruff.lint.per-file-ignores]
 "src/wowlogs_agent/cli.py" = ["B008"]  # Typer idiomatically calls typer.Option in defaults.
